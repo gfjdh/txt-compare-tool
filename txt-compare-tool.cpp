@@ -12,7 +12,7 @@ int main()
     int a = 0, b = 0, c = 0, r = 0, del = 0, x = 0;
     bool d = 0;
     cout << "###########################################################################################" << endl;
-    cout << "txt-compare-tool-v0.2" << endl;
+    cout << "txt-compare-tool v1.0" << endl;
     cout << "《同济大学高程作业文本校对批处理文件生成工具》使用说明：" << endl;
     cout << "1.测试数据文件需要命名格式为“test-data8.txt”，内部格式同老师get_input_data.exe要求" << endl;
     cout << "  （其中的3和8应替换成你需要的作业编号，下同）" << endl;
