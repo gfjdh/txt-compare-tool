@@ -21,6 +21,9 @@
     <ClCompile Include="check-cin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="output.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="txt-compare-tool.h">

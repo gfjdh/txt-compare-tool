@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="check-cin.cpp" />
+    <ClCompile Include="output.cpp" />
     <ClCompile Include="txt-compare-tool.cpp" />
   </ItemGroup>
   <ItemGroup>
