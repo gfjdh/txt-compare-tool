@@ -1,12 +1,10 @@
 #include <iostream>
-#include <iomanip>
-#include <cstdio>
 #include <limits>
 using namespace std;
 
 //////////////此函数用于整数输入检验//////////
 
-int checkcin(int x,int y)//x待检查数，y为上限
+int CheckCin(int x,int y)//x待检查数，y为上限
 {
 	while (1)
 	{
