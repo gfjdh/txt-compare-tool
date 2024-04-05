@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="auto-data.cpp" />
     <ClCompile Include="check-cin.cpp" />
     <ClCompile Include="output.cpp" />
     <ClCompile Include="txt-compare-tool.cpp" />

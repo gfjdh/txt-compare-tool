@@ -12,48 +12,61 @@ int main()
     /////////////////////////////////////////////////以下是用户输入部分/////////////////////////////////////////////////////
 
     int a = 0, b = 0, c = 0, r = 0, x = 0;     //a为组号，b为序号，c为测试数据数，r为语言选项参数，x为输入中间变量;
-    bool d = 0, del = 0, dev = 0;     //d为demo区分选项参数，del为删除选项参数，dev为编译器选项参数；
+    bool d = 0, del = 0, dev = 0, autodata = 0;     //d为demo区分选项参数，del为删除选项参数，dev为编译器选项参数。autodata为生成数据模板选项参数
     string parameter = "";    //用户指定的txt-compare.exe的参数
 
-    cout << "请输入作业组号（例：3-b8则输入：3）：" << endl;
+    cout << " ①请输入作业组号（例：3-b8则输入：3）：" << endl;
     cin >> x;
     a = CheckCin(x,99);
-
-    cout << "请输入作业编号（例：3-b8则输入：8）：" << endl;
+    system("cls");
+    cout << " ②请输入作业编号（例：3-b8则输入：8）：" << endl;
     cin >> x;
     b = CheckCin(x,99);
-
-    cout << "请输入测试数据总数[0,99]：" << endl;
+    system("cls");
+    cout << " ③请输入测试数据总数[0,99]：" << endl;
     cin >> x;
     c = CheckCin(x, 99);
+    system("cls");
 
-    cout << "是否只有c++或c程序（仅c++输入1，仅c输入2，否输入0）：" << endl;
+    cout << " ④是否需要生成测试数据模板（是输入1，否输入0）：" << endl;
+    cin >> x;
+    autodata = CheckCin(x, 1);
+    system("cls");
+    if (autodata)
+    {
+        DataCreate(a, b, c);
+        system("pause");
+        return 0;
+    }
+
+    cout << " ⑤是否只有c++或c程序（仅c++输入1，仅c输入2，否输入0）：" << endl;
     cin >> x;
     r = CheckCin(x, 2);
     if (r ==0)
     {
-        cout << "是否需要区分demo和demo-c（是输入1，否输入0）：" << endl;
+        cout << " 是否需要区分demo和demo-c（是输入1，否输入0）：" << endl;
         cin >> x;
         d = CheckCin(x, 1);
     }
-
-    cout << "是否需要区分VS(默认仅vs)和dev（是输入1，否输入0）:" << endl;
+    system("cls");
+    cout << " ⑥是否需要区分VS(默认仅vs)和dev（是输入1，否输入0）:" << endl;
     cin >> x;
     dev = CheckCin(x, 1);
-
-    cout << "是否需要指定txt-compare.exe的参数（是输入1，否输入0）：" << endl;
+    system("cls");
+    cout << " ⑦是否需要指定txt-compare.exe的参数（是输入1，否输入0）：" << endl;
     cin >> x;
     x = CheckCin(x, 1);
     if (x == 1)
     {
-        cout << "请在一行内输入您要指定的参数(参数均需带有--)" << endl;
-        getchar();
+        cout << " 请在一行内输入您要指定的参数(参数均需带有--)" << endl;
+        x = getchar();
         getline(cin, parameter);
     }
-
-    cout << "是否需要自动删除生成的result文件（是输入1，否输入0）：" << endl;
+    system("cls");
+    cout << " ⑧是否需要自动删除生成的result文件（是输入1，否输入0）：" << endl;
     cin >> x;
     del = CheckCin(x, 1);
+    system("cls");
     /////////////////////////////////////////////////以上是用户输入部分/////////////////////////////////////////////////////
     /////////////////////////////////////////////////以下是输出部分/////////////////////////////////////////////////////
     cout << endl << "开始输出txt校验批处理文件" << endl << endl;
@@ -139,14 +152,14 @@ int main()
     }
     else
         cout << "运行bat文件后，-result-1.txt是你的c++程序的输出，-result-2.txt是你的c程序的输出，-result是demo的输出" << endl << endl;
-    write << "pause" << endl;
 
     /////////////////////////////////////////////////以上是输出部分/////////////////////////////////////////////////////
-
-    cout << "输出完成，关闭本窗口后双击运行" << s << "文件即可一键比对作业输出结果txt" << endl;
-    cout << "第一次运行bat可能有卡顿现象，关闭窗口重新运行即可" << endl << endl;
+    const char* bat = s.c_str();
+    system(bat);
+    write << "pause" << endl;
+    cout << endl << "输出完成，本次已自动运行bat文件，此后双击运行" << s << "文件即可一键比对作业输出结果txt" << endl;
     cout << "注意：如需重新生成" << s << "文件需要删除旧文件" << endl;
 
-    cin >> a;
+    system("pause");
     return 0;
 }

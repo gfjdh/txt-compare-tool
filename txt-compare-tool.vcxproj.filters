@@ -24,6 +24,9 @@
     <ClCompile Include="output.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="auto-data.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="txt-compare-tool.h">

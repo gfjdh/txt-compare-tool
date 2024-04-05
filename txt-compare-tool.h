@@ -3,6 +3,8 @@ using namespace std;
 
 void Readme();
 
+void DataCreate(int a, int b, int c);  //a为组号，b为序号，c为测试数据数
+
 int CheckCin(int x,int y);//x待检查数，y为上限
 
 string createExeRunCommand(int a, int b, int c, string n, string r);   //a为组号，b为序号，c为数据数，n为exe程序后缀，r为reslut后缀

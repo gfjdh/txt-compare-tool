@@ -9,15 +9,16 @@ using namespace std;
 void Readme()
 {
     cout << "        ###########################################################################################" << endl;
-    cout << "        # txt-compare-tool v1.2                                                                   #" << endl;
+    cout << "        #      txt-compare-tool v1.3                                                              #" << endl;
     cout << "        # 《同济大学高程作业文本校对批处理文件生成工具》使用说明：                                #" << endl;
     cout << "        # 1.测试数据文件需要命名格式为“test-data8.txt”，内部格式同老师get_input_data.exe要求    #" << endl;
+    cout << "        #   已有自动生成测试数据文件模板功能，在第四步选择“是”即可自动生成模板                  #" << endl;
     cout << "        #  （其中的3和8应替换成你需要的作业编号，下同）                                           #" << endl;
     cout << "        # 2.老师给的demo程序命名格式应为‘3-b8-demo.exe’，如果有c语言版本则为‘3-b8-demo-c.exe’ #" << endl;
     cout << "        # 3.你的c++程序命名格式应为‘3-b8-1.exe’,如果有dev版本则为‘3-b8-1-dev.exe’             #" << endl;
     cout << "        # 4.你的c程序命名格式应为‘3-b8-2.exe’,如果有dev版本则为‘3-b8-2-dev.exe’               #" << endl;
-    cout << "        # 5.以上文件和本工具应在同一目录下                                                        #" << endl;
-    cout << "        # 6.老师的get_input_data.exe和txt_compare.exe应已可用                                     #" << endl;
+    cout << "        # 5.老师的get_input_data.exe和txt_compare.exe应已可用(可在储存库内下载)                   #" << endl;
+    cout << "        # 6.以上文件和本工具应在同一目录下                                                        #" << endl;
     cout << "        # 7.bug反馈途径见储存库                                                                   #" << endl;
     cout << "        # 8.本工具提供的结果仅供参考，如果造成任何作业相关问题开发者概不负责                      #" << endl;
     cout << "        #                                                                                         #" << endl;
