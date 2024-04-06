@@ -85,13 +85,13 @@ int main()
     {
         write << createExeRunCommand(a, b, c, "-1", "1");
         if (dev)         //如果区分dev，打印输出1-dev.exe的结果的命令
-            write << createExeRunCommand(a, b, c, "-2-dev", "2-dev");
+            write << createExeRunCommand(a, b, c, "-1-dev", "1-dev");
     }
     if (r != 1)
     {
         write << createExeRunCommand(a, b, c, "-2", "2");
         if (dev)        //如果区分dev，打印输出2-dev.exe的结果的命令
-            write << createExeRunCommand(a, b, c, "-1-dev", "1-dev");
+            write << createExeRunCommand(a, b, c, "-2-dev", "2-dev");
     }
 
     write << "@echo on" << endl; //以下功能是打印 对比结果txt的指令
@@ -152,14 +152,14 @@ int main()
     }
     else
         cout << "运行bat文件后，-result-1.txt是你的c++程序的输出，-result-2.txt是你的c程序的输出，-result是demo的输出" << endl << endl;
-
+    write << "pause" << endl;
     /////////////////////////////////////////////////以上是输出部分/////////////////////////////////////////////////////
     const char* bat = s.c_str();
-    system(bat);
-    write << "pause" << endl;
     cout << endl << "输出完成，本次已自动运行bat文件，此后双击运行" << s << "文件即可一键比对作业输出结果txt" << endl;
+    cout << "如果长时间卡死可能是demo或你的程序陷入死循环，请检查测试数据和程序后重新运行" << s << "文件" << endl;
     cout << "注意：如需重新生成" << s << "文件需要删除旧文件" << endl;
-
+    system(bat);
+    cout << s << "运行完成" << endl;
     system("pause");
     return 0;
 }
