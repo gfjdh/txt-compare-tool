@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdio>
+#include <conio.h>
 #include <fstream>
 #include <string>
 #include "txt-compare-tool.h"
@@ -28,43 +29,46 @@ int main()
     c = CheckCin(x, 99);
     system("cls");
 
-    cout << " ④是否需要生成测试数据模板（是输入1，否输入0）：" << endl;
-    cin >> x;
-    autodata = CheckCin(x, 1);
-    system("cls");
-    if (autodata)
+    if (c != 0)
     {
-        DataCreate(a, b, c);
-        system("pause");
-        return 0;
+        cout << " 是否需要生成测试数据模板（是输入1，否输入0）：" << endl;
+        x = _getch() - 48;
+        autodata = CheckCin(x, 1);
+        system("cls");
+        if (autodata)
+        {
+            DataCreate(a, b, c);
+            system("pause");
+            return 0;
+        }
     }
 
-    cout << " ⑤是否只有c++或c程序（仅c++输入1，仅c输入2，否输入0）：" << endl;
-    cin >> x;
+    cout << " ④是否只有c++或c程序（仅c++输入1，仅c输入2，否输入0）：" << endl;
+    x = _getch() - 48;
     r = CheckCin(x, 2);
     if (r ==0)
     {
         cout << " 是否需要区分demo和demo-c（是输入1，否输入0）：" << endl;
-        cin >> x;
+        x = _getch() - 48;
         d = CheckCin(x, 1);
     }
     system("cls");
-    cout << " ⑥是否需要区分VS(默认仅vs)和dev（是输入1，否输入0）:" << endl;
-    cin >> x;
+    cout << " ⑤是否需要区分VS(默认仅vs)和dev（是输入1，否输入0）:" << endl;
+    x = _getch() - 48;
     dev = CheckCin(x, 1);
     system("cls");
-    cout << " ⑦是否需要指定txt-compare.exe的参数（是输入1，否输入0）：" << endl;
-    cin >> x;
+    cout << " ⑥是否需要指定txt-compare.exe的参数（是输入1，否输入0）：" << endl;
+    x = _getch() - 48;
     x = CheckCin(x, 1);
     if (x == 1)
     {
         cout << " 请在一行内输入您要指定的参数(参数均需带有--)" << endl;
-        x = getchar();
+        cin.ignore();
         getline(cin, parameter);
     }
     system("cls");
-    cout << " ⑧是否需要自动删除生成的result文件（是输入1，否输入0）：" << endl;
-    cin >> x;
+    cout << " ⑦是否需要自动删除生成的result文件（是输入1，否输入0）：" << endl;
+    x = _getch() - 48;
     del = CheckCin(x, 1);
     system("cls");
     /////////////////////////////////////////////////以上是用户输入部分/////////////////////////////////////////////////////
@@ -155,7 +159,7 @@ int main()
     write << "pause" << endl;
     /////////////////////////////////////////////////以上是输出部分/////////////////////////////////////////////////////
     const char* bat = s.c_str();
-    cout << endl << "输出完成，本次已自动运行bat文件，此后双击运行" << s << "文件即可一键比对作业输出结果txt" << endl;
+    cout << endl << "输出完成，即将自动运行bat文件，此后双击运行" << s << "文件即可一键比对作业输出结果txt" << endl;
     cout << "如果长时间卡死可能是demo或你的程序陷入死循环，请检查测试数据和程序后重新运行" << s << "文件" << endl;
     cout << "注意：如需重新生成" << s << "文件需要删除旧文件" << endl;
     system(bat);
